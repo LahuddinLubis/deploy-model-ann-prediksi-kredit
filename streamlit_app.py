@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import home
 import prediksi
 
 st.set_page_config(
@@ -22,7 +23,9 @@ def main():
             }
         )
 
-    if app == "Prediksi":
+    if app == "Home":
+        home.app()
+    elif app == "Prediksi":
         prediksi.app()
 
 if __name__ == "__main__":
