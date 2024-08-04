@@ -9,7 +9,7 @@ def app():
     uploaded_file = st.file_uploader("")
     if uploaded_file == None:
         # dataset_file = "dataset/Dataset PNM Mekaar.csv"
-        dataset_df = pd.read_csv("https://github.com/LahuddinLubis/deploy-model-ann-prediksi-kredit/blob/master/Dataset%20PNM%20Mekaar.csv")
+        dataset_df = pd.read_csv("https://raw.githubusercontent.com/LahuddinLubis/deploy-model-ann-prediksi-kredit/master/Dataset%20PNM%20Mekaar.csv")
         st.write(dataset_df)
     else:
         dataset_df = pd.read_csv(uploaded_file)
