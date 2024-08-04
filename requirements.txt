@@ -1,1 +1,9 @@
-streamlit>=1.26.0
+streamlit
+streamlit-option-menu
+pandas
+pandas-profiling
+plotly
+numpy
+scikit-learn
+scikeras
+tensorflow==2.17.0
