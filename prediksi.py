@@ -1,16 +1,18 @@
-import streamlit as st
-import joblib
-import pickle
-import numpy as np
 import os
 import requests
+import joblib
+import numpy as np
+import streamlit as st
+
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.optimizers import RMSprop
 from keras.callbacks import Callback
-from scikeras.wrappers import KerasClassifier
+
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import MinMaxScaler
+from scikeras.wrappers import KerasClassifier
+from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+
 
 # loading the saved models# URL file model di GitHub
 url = 'https://raw.githubusercontent.com/LahuddinLubis/deploy-model-ann-prediksi-kredit/master/best_ann_model.joblib'
