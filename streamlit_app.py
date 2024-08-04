@@ -28,5 +28,5 @@ def streamlit_app():
     elif app == "Prediksi":
         prediksi.app()
 
-if __name__ == "__main__":
+if __name__ == "__streamlit_app__":
     streamlit_app()
