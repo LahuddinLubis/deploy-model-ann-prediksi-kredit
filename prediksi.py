@@ -19,6 +19,8 @@ from sklearn import preprocessing
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 
+filename = 'best_ann-model.joblib'
+model_prediksi = joblib.load(filename)
 
 # # loading the saved models# URL file model di GitHub
 # url = 'https://raw.githubusercontent.com/LahuddinLubis/deploy-model-ann-prediksi-kredit/master/best_ann_model.joblib'
@@ -38,7 +40,6 @@ from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 # # # Muat model menggunakan joblib
 # model_prediksi = joblib.load(local_filename)
 
-model_prediksi = joblib.load('best_ann-model.joblib')
 
 # # defining the function which will make the prediction using the data which the user inputs 
 # def prediction(Nama_Kelompok, Usia, Status_Pernikahan, Pekerjaan, Jumlah_Keluarga, Jumlah_Pinjaman, Jangka_Waktu):
