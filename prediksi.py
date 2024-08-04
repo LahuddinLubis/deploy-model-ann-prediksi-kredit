@@ -12,7 +12,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 # loading the saved models
 # model_file = './models/pipeline_ann_model.sav'
-model_prediksi = joblib.load('joblib_ann_model.joblib')
+model_prediksi = joblib.load('https://github.com/LahuddinLubis/deploy-model-ann-prediksi-kredit/blob/master/best_ann_model.joblib')
 
 # defining the function which will make the prediction using the data which the user inputs 
 def prediction(Nama_Kelompok, Usia, Status_Pernikahan, Pekerjaan, Jumlah_Keluarga, Jumlah_Pinjaman, Jangka_Waktu):
