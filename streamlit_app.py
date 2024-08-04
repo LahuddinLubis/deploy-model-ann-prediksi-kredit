@@ -7,7 +7,7 @@ st.set_page_config(
     page_title="Prediksi Kredit Menggunakan ANN",
 )
 
-def main():
+def streamlit_app():
     with st.sidebar:
         app = option_menu(
             menu_title='Main Menu',
@@ -29,4 +29,4 @@ def main():
         prediksi.app()
 
 if __name__ == "__main__":
-    main()
+    streamlit_app()
