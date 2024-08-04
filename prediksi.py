@@ -21,22 +21,24 @@ from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 
 
 # # loading the saved models# URL file model di GitHub
-url = 'https://raw.githubusercontent.com/LahuddinLubis/deploy-model-ann-prediksi-kredit/master/best_ann_model.joblib'
-local_filename = 'best_ann_model.joblib'
+# url = 'https://raw.githubusercontent.com/LahuddinLubis/deploy-model-ann-prediksi-kredit/master/best_ann_model.joblib'
+# local_filename = 'best_ann_model.joblib'
 
-# # Fungsi untuk mendownload file dari URL
-def download_file(url, local_filename):
-    response = requests.get(url)
-    with open(local_filename, 'wb') as f:
-        f.write(response.content)
+# # # Fungsi untuk mendownload file dari URL
+# def download_file(url, local_filename):
+#     response = requests.get(url)
+#     with open(local_filename, 'wb') as f:
+#         f.write(response.content)
 
-# # Cek apakah file sudah ada di lokal, jika tidak download
-if not os.path.exists(local_filename):
-    st.write("Downloading model file...")
-    download_file(url, local_filename)
+# # # Cek apakah file sudah ada di lokal, jika tidak download
+# if not os.path.exists(local_filename):
+#     st.write("Downloading model file...")
+#     download_file(url, local_filename)
 
-# # Muat model menggunakan joblib
-model_prediksi = joblib.load(local_filename)
+# # # Muat model menggunakan joblib
+# model_prediksi = joblib.load(local_filename)
+
+model_prediksi = joblib.load('best_ann-model.joblib')
 
 # # defining the function which will make the prediction using the data which the user inputs 
 # def prediction(Nama_Kelompok, Usia, Status_Pernikahan, Pekerjaan, Jumlah_Keluarga, Jumlah_Pinjaman, Jangka_Waktu):
