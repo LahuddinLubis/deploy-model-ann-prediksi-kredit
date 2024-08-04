@@ -2,6 +2,7 @@ import streamlit as st
 import joblib
 import pickle
 import numpy as np
+import requests
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.optimizers import RMSprop
@@ -10,9 +11,23 @@ from scikeras.wrappers import KerasClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
 
-# loading the saved models
-# model_file = './models/pipeline_ann_model.sav'
-model_prediksi = joblib.load('https://github.com/LahuddinLubis/deploy-model-ann-prediksi-kredit/blob/master/best_ann_model.joblib')
+# loading the saved models# URL file model di GitHub
+url = 'https://raw.githubusercontent.com/LahuddinLubis/deploy-model-ann-prediksi-kredit/master/best_ann_model.joblib'
+local_filename = 'best_ann_model.joblib'
+
+# Fungsi untuk mendownload file dari URL
+def download_file(url, local_filename):
+    response = requests.get(url)
+    with open(local_filename, 'wb') as f:
+        f.write(response.content)
+
+# Cek apakah file sudah ada di lokal, jika tidak download
+if not os.path.exists(local_filename):
+    st.write("Downloading model file...")
+    download_file(url, local_filename)
+
+# Muat model menggunakan joblib
+model_prediksi = joblib.load(local_filename)
 
 # defining the function which will make the prediction using the data which the user inputs 
 def prediction(Nama_Kelompok, Usia, Status_Pernikahan, Pekerjaan, Jumlah_Keluarga, Jumlah_Pinjaman, Jangka_Waktu):
